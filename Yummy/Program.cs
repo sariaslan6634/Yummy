@@ -1,5 +1,8 @@
 using System.Reflection;
+using FluentValidation;
 using Yummy.Context;
+using Yummy.Entities;
+using Yummy.ValidationRules;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApiContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
 
 
 builder.Services.AddControllers();
