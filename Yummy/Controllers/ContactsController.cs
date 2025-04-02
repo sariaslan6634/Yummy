@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Yummy.Context;
-using Yummy.Dtos.ContactDto;
 using Yummy.Entities;
 
 namespace Yummy.Controllers
@@ -24,14 +22,8 @@ namespace Yummy.Controllers
             return Ok(values);
         }
         [HttpPost]
-        public IActionResult CreateContact(CreateContactDto createContactDto)
+        public IActionResult CreateContact(Contact contact)
         {
-            Contact contact = new Contact();
-            contact.Phone = createContactDto.Phone;
-            contact.Email = createContactDto.Email;
-            contact.Address = createContactDto.Address;
-            contact.MapLocation = createContactDto.MapLocation;
-            contact.OpenHours = createContactDto.OpenHours;
             _context.Contacts.Add(contact);
             _context.SaveChanges();
             return Ok("Ekleme işlemi başarılı");
@@ -51,15 +43,8 @@ namespace Yummy.Controllers
             return Ok(value);
         }
         [HttpPut]
-        public IActionResult UpdateContact(UpdateContactDto updateContactDto)
+        public IActionResult UpdateContact(Contact contact)
         {
-            Contact contact = new Contact();    
-            contact.ContactId = updateContactDto.ContactId;
-            contact.Phone = updateContactDto.Phone;
-            contact.Email = updateContactDto.Email;
-            contact.Address = updateContactDto.Address; 
-            contact.MapLocation= updateContactDto.MapLocation;
-            contact.OpenHours= updateContactDto.OpenHours;
             _context.Contacts.Update(contact);
             _context.SaveChanges();
             return Ok("Güncelleme işlemi başarılı");

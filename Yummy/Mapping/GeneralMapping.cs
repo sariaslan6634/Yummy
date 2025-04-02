@@ -2,6 +2,7 @@
 using Yummy.Dtos.FeatureDto;
 using Yummy.Dtos.MessageDto;
 using Yummy.Dtos.ProductDto;
+using Yummy.Dtos.ReservationDto;
 using Yummy.Entities;
 
 namespace Yummy.Mapping
@@ -25,6 +26,7 @@ namespace Yummy.Mapping
             //product
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResutlProductWithCategoryDto>().ForMember(x => x.CategoryName, y => y.MapFrom(z => z.Category.CategoryName)).ReverseMap();
+
         }
     }
 }

@@ -11,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApiContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<IValidator<Product>, ProductValidator>();
+builder.Services.AddScoped<IValidator<Reservation>, ReservationValidator>();
+builder.Services.AddScoped<IValidator<Testimonial>, TestimonialValidator>();
 
 
 builder.Services.AddControllers();

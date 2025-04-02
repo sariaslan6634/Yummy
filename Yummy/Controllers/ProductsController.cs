@@ -90,5 +90,6 @@ namespace Yummy.Controllers
             var value = _context.Products.Include(x => x.Category).ToList();
             return Ok(_mapper.Map<List<ResutlProductWithCategoryDto>>(value));
         }
+
     }
 }
