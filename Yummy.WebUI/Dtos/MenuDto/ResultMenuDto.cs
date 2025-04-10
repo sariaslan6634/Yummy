@@ -1,4 +1,4 @@
-﻿namespace Yummy.WebUI.Dtos.Menu
+﻿namespace Yummy.WebUI.Dtos.MenuDto
 {
     public class ResultMenuDto
     {
@@ -7,7 +7,8 @@
         public string ProductDescription { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
-
-        public int CategoryId { get; set; }
+        
+        public int? MenuId { get; set; }
+        public int? CategoryId { get; set; }
     }
 }

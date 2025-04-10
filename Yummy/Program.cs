@@ -15,6 +15,8 @@ builder.Services.AddScoped<IValidator<Reservation>, ReservationValidator>();
 builder.Services.AddScoped<IValidator<Testimonial>, TestimonialValidator>();
 
 
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

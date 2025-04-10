@@ -10,6 +10,7 @@ namespace Yummy.Context
             optionsBuilder.UseSqlServer("Server = SARIASLAN\\SQLEXPRESS; initial catalog=YummyDb; integrated security = True;TrustServerCertificate =True;");
         }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Menu> Menus { get; set; }
         public DbSet<Chef> Chefs { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Feature> Features { get; set; }
